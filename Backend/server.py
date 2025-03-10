@@ -3,7 +3,6 @@ from fastapi import FastAPI
 import uvicorn
 import asyncio
 from routers import routers
-from config.firebase import conected_firebase
 from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
@@ -26,10 +25,10 @@ app.add_middleware(
 
 routers.routers(app)
 
-@app.on_event("startup")
-async def on_startup():
-    await conected_firebase()
-    print("Firebase connected successfully!")
+# @app.on_event("startup")
+# async def on_startup():
+    # await conected_firebase()
+    # print("Firebase connected successfully!")
 
 if __name__ == "__main__":
 

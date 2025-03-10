@@ -1,7 +1,6 @@
 import asyncio
 import requests
 import json
-from openai import OpenAI
 from dotenv import load_dotenv
 import os
 from os.path import join, dirname

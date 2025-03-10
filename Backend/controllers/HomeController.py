@@ -1,5 +1,3 @@
-from config.firebase import conected_firebase
-from firebase_admin import db
 import os
 from os.path import join, dirname
 from dotenv import load_dotenv
