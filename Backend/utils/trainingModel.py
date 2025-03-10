@@ -54,7 +54,7 @@ class MarketingModel(nn.Module):
     def __init__(self, input_dim, output_dim):
         super().__init__()
         self.fc1 = nn.Linear(input_dim, 16)
-        self.dropout = nn.Dropout(0.2)
+        self.dropout = nn.Dropout(0.3)
         self.fc2 = nn.Linear(16, output_dim)
         self.activation = nn.ReLU()
 
@@ -74,8 +74,8 @@ def loss_fn(model):
     logits = model(X_train)
     return loss(logits, y_train).mean()
 
-epochs_num = 2500
-optimizer = optim.SGD(learning_rate=0.001,weight_decay=0.01)
+epochs_num = 12000
+optimizer = optim.Adam(learning_rate=0.001)
 
 for epoch in range(epochs_num):
     def compute_loss(model): 
